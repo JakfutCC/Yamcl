@@ -1,6 +1,7 @@
 
 package eu.usrv.yamcore.world;
 
+import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -29,9 +30,9 @@ public class EzCoords {
     }
 
     public EzCoords(Vec3 pPosition) {
-        _mX = (int) pPosition.xCoord;
-        _mY = (int) pPosition.yCoord;
-        _mZ = (int) pPosition.zCoord;
+        _mX = MathHelper.floor_double(pPosition.xCoord);
+        _mY = MathHelper.floor_double(pPosition.yCoord);
+        _mZ = MathHelper.floor_double(pPosition.zCoord);
     }
 
     public int getX() {

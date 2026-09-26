@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.MathHelper;
 
 import eu.usrv.yamcore.YAMCore;
 
@@ -26,9 +27,9 @@ public class EntityHelper {
         int tAggroRange = 16;
         List<Entity> tEntities = null;
 
-        int x = (int) pEntityPlayer.posX;
-        int y = (int) pEntityPlayer.posY;
-        int z = (int) pEntityPlayer.posZ;
+        int x = MathHelper.floor_double(pEntityPlayer.posX);
+        int y = MathHelper.floor_double(pEntityPlayer.posY);
+        int z = MathHelper.floor_double(pEntityPlayer.posZ);
 
         try {
             // Get player's boundary box
